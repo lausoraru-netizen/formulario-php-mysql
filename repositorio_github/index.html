@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contacto - Laura Sofía Ramos Rueda</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxZDRlZDgiLz48dGV4dCB4PSIzMiIgeT0iNDMiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjI4IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TFI8L3RleHQ+PC9zdmc+Cg==">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <main class="contenedor">
+        <section class="tarjeta">
+            <header class="encabezado">
+                <h1>Formulario de contacto</h1>
+                <p class="autora">Elaborado por: <strong>Laura Sofía Ramos Rueda</strong></p>
+                <p>Completa los campos para enviar tu mensaje</p>
+            </header>
+
+            <form id="formularioContacto" action="php/interconexion.php" method="POST">
+                <div class="campo">
+                    <label for="nombre">Nombre completo *</label>
+                    <input type="text" id="nombre" name="nombre_completo" maxlength="120" autocomplete="name" required>
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo Electrónico *</label>
+                    <input type="email" id="correo" name="correo" maxlength="190" autocomplete="email" required>
+                </div>
+                
+                <div class="campo">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" maxlength="30" autocomplete="tel">
+                </div>
+
+                <div class="campo">
+                    <label for="asunto">Asunto *</label>
+                    <select name="asunto" id="asunto" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="Consulta General">Consulta General</option>
+                        <option value="Soporte técnico">Soporte Técnico</option>
+                        <option value="Solicitud de información">Solicitud de Información</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="mensaje">Mensaje *</label>
+                    <textarea name="mensaje" id="mensaje" rows="5" maxlength="3000" required></textarea>
+                </div>
+
+                <div class="campo consentimiento">
+                    <label for="acepta_tratamiento">
+                        <input type="checkbox" id="acepta_tratamiento" name="acepta_tratamiento" value="1" required>
+                        <span>He leído el aviso de privacidad y acepto el tratamiento de mis datos personales. * <a href="Tratamiento_Datos_Laura_Sofia_Ramos_Rueda.pdf" target="_blank">Ver política de tratamiento de datos</a></span>
+                    </label>
+                </div>
+
+                <p id="mensajeEstado" class="mensaje-estado" role="status" aria-live="polite"></p>
+
+                <div class="acciones">
+                    <button type="submit" id="botonEnviar">Enviar mensaje</button>
+                    <button type="reset" class="boton-secundario">Limpiar</button>
+                </div>
+
+                <p class="nota">Los campos marcados con * son <strong>obligatorios</strong>.</p>
+            </form>
+                <p class="nota"><a href="php/registros.php">Ver registros guardados</a></p>
+                <p class="nota">© 2026 Laura Sofía Ramos Rueda - ETITC</p>
+        </section>
+    </main> 
+    <script src="JS/script.js"></script>
+</body>
+</html>
